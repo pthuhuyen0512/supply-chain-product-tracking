@@ -33,6 +33,7 @@ contract SupplyChain is AccessControl {
     mapping(bytes32 => Product) private products;
     mapping(bytes32 => Handover[]) private histories;
 
+    ///Event: tạo sp
     event ProductCreated(
         bytes32 indexed productKey,
         string productId,
@@ -40,6 +41,7 @@ contract SupplyChain is AccessControl {
         uint64 timestamp
     );
 
+    ///Event: bàn giao sp
     event ProductTransferred(
         bytes32 indexed productKey,
         address indexed from,
