@@ -1,0 +1,25 @@
+{
+  "document": "docs/reports/step-08-integration-acceptance.docx",
+  "language": "English",
+  "pages": 12,
+  "originalScreenshotsEmbedded": 10,
+  "screenshotBytesMatchSource": true,
+  "successfulTransactionHashesVerified": 4,
+  "allPagesVisuallyInspected": true,
+  "closure": "Closed within user-approved scope",
+  "waivedActualWalletCases": [
+    "Disconnect and reconnect",
+    "Wrong network and return to Ganache"
+  ],
+  "waivedCasesClaimedPassed": false,
+  "accessibilityAudit": {
+    "file": "docs/reports/step-08-integration-acceptance.docx",
+    "counts": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "findings": []
+  },
+  "sha256": "67827677713eb08acaf26f8653c6b52bc68d7726ce6d8a5508502899bb4d40a2"
+}

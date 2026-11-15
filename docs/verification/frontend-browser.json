@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-11-15T17:47:36.268Z",
+  "browser": "Chrome (Program Files), headless Playwright 1.65.1 from temporary tooling directory",
+  "checks": [
+    "Desktop 1440x1100: real Ganache connected, all required regions, disabled unfinished actions, no localStorage writes.",
+    "Mobile 390x844: no horizontal overflow.",
+    "Real RPC: no browser console errors or uncaught page errors.",
+    "Browser: RPC offline displays specific recovery message.",
+    "Browser fixture: wrong chain rejected.",
+    "Browser fixture: missing contract rejected.",
+    "Actual production build missing-config: page opens, export instructions visible, no uncaught error.",
+    "Actual production build invalid-config: page opens, export instructions visible, no uncaught error.",
+    "Original ABI and local configuration preserved byte-for-byte."
+  ],
+  "consoleErrorsOnRealRpc": []
+}

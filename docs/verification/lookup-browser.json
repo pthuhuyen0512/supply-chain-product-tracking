@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-15T18:46:13.075Z",
+  "browser": "Microsoft Edge headless",
+  "checks": [
+    "Edge without window.ethereum: trimmed demo ID resolves to Delivered, Customer holder and 4 ordered history entries.",
+    "Actual html5-qrcode image decoder reads generated PNG and automatically performs public lookup. This is image decoding, not physical webcam evidence.",
+    "Unknown ID clears previous product/timeline; normal false exists response handled.",
+    "HTML-like input stays literal text and does not execute.",
+    "RPC disconnect clears stale data and displays the distinct network error.",
+    "Simulated camera permission denial gives a readable message and allows retry. No real camera permission was requested.",
+    "Actual image decoder: URL payload is treated as a literal product ID; no navigation.",
+    "A delayed older lookup cannot overwrite a newer not-found result.",
+    "Simulated on-chain HTML names/origins render as text, with no injected elements or script execution.",
+    "Synthetic canvas media stream: real html5-qrcode camera pipeline decodes demo QR once, stops its track, and loads Delivered history. This is not physical camera evidence.",
+    "Synthetic stream: repeated start then Stop camera releases all tracks.",
+    "Synthetic stream: navigating away from the QR section stops all camera tracks."
+  ],
+  "pageErrors": [],
+  "physicalCameraVerified": false,
+  "syntheticCameraPipelineVerified": true
+}

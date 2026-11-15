@@ -1,0 +1,50 @@
+[
+  {
+    "file": "01-grant-all-participant-roles.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:13:09.731Z",
+    "sha256": "d642337cc11d371967850b62715976f828066e9313f8f290974b0cf2f425b82d",
+    "width": 1534,
+    "height": 848
+  },
+  {
+    "file": "02-create-product.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:15:49.640Z",
+    "sha256": "6bb77896f26f1f42101e367d09a61696382b5792da42f5bfb190ff39d581ff7f",
+    "width": 1534,
+    "height": 816
+  },
+  {
+    "file": "03-invalid-handover-rejected.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:17:54.339Z",
+    "sha256": "0f97705fb77a3a07d87420c75b8aff70c096baad24b09c36eb2888a0121fd9d2",
+    "width": 896,
+    "height": 482
+  },
+  {
+    "file": "04-producer-to-distributor.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:17:54.339Z",
+    "sha256": "dad59e14ca8ed998aa0a15e51c01fcc46b0356b6c121ca9ca1be8f7266ffeb20",
+    "width": 1300,
+    "height": 816
+  },
+  {
+    "file": "05-distributor-to-retailer.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:21:07.921Z",
+    "sha256": "6dc4bd04f5b2dc994c55ae88a096ba4aa9ffe9f236aff03f72a92e2e07f33472",
+    "width": 870,
+    "height": 760
+  },
+  {
+    "file": "06-retailer-to-customer.png",
+    "source": "Original user screenshot from the step 06 conversation",
+    "messageTimestampUTC": "2026-11-15T18:22:45.207Z",
+    "sha256": "f84d8bb6988f08902410accf3443a776a76bc315be666e84a50cf566e792d95c",
+    "width": 924,
+    "height": 808
+  }
+]

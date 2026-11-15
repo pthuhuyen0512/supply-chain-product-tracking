@@ -1,0 +1,75 @@
+{
+  "checkedAt": "2026-11-15T19:02:33.765Z",
+  "contractAddress": "0x843B273a8c67BcaB604f14fd466162CBdBb556B9",
+  "chainId": "1337",
+  "block": 9,
+  "roles": [
+    {
+      "name": "Admin",
+      "address": "0x2fe82257462dc3095d497e6ce446b2ce1bba25ec",
+      "granted": true,
+      "balanceETH": "99.991128661875"
+    },
+    {
+      "name": "Producer",
+      "address": "0x810a640b6089b12ab3bb7bde1697752129679828",
+      "granted": true,
+      "balanceETH": "99.9953161"
+    },
+    {
+      "name": "Distributor",
+      "address": "0x3a9f1bc5de0da2d1e04bebba2c6b29f09ed0aab7",
+      "granted": true,
+      "balanceETH": "99.99824948"
+    },
+    {
+      "name": "Retailer",
+      "address": "0x3788b00da52305a37da455b164b0ebf2a937b4bd",
+      "granted": true,
+      "balanceETH": "99.99824412"
+    },
+    {
+      "name": "Customer",
+      "address": "0x9ce98beb9e0bacb75cd09b2a6a623cd366805cd3",
+      "granted": true,
+      "balanceETH": "100.0"
+    }
+  ],
+  "productId": "COFFEE-DEMO-001",
+  "product": {
+    "exists": true,
+    "name": "Da Lat Arabica",
+    "origin": "Da Lat, Vietnam",
+    "currentHolder": "0x9CE98Beb9e0Bacb75cD09B2a6A623cD366805Cd3",
+    "stage": 4,
+    "createdAt": "1794766509"
+  },
+  "history": [
+    {
+      "from": "0x0000000000000000000000000000000000000000",
+      "to": "0x810A640B6089B12ab3bb7Bde1697752129679828",
+      "timestamp": "1794766509",
+      "stage": 1
+    },
+    {
+      "from": "0x810A640B6089B12ab3bb7Bde1697752129679828",
+      "to": "0x3a9f1bC5DE0dA2d1e04BEbBA2c6B29f09ED0AaB7",
+      "timestamp": "1794766661",
+      "stage": 2
+    },
+    {
+      "from": "0x3a9f1bC5DE0dA2d1e04BEbBA2c6B29f09ED0AaB7",
+      "to": "0x3788b00da52305a37DA455B164B0EBf2a937B4Bd",
+      "timestamp": "1794766834",
+      "stage": 3
+    },
+    {
+      "from": "0x3788b00da52305a37DA455B164B0EBf2a937B4Bd",
+      "to": "0x9CE98Beb9e0Bacb75cD09B2a6A623cD366805Cd3",
+      "timestamp": "1794766948",
+      "stage": 4
+    }
+  ],
+  "fullFlowOnChain": true,
+  "evidenceLimit": "Read-only RPC state does not prove that MetaMask signed transactions. Manual browser confirmation and transaction receipts must be recorded separately."
+}

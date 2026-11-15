@@ -1,0 +1,10 @@
+[
+  {
+    "productId": "COFFEE-DEMO-001",
+    "producer": "0x810A640B6089B12ab3bb7Bde1697752129679828",
+    "hash": "0x49ff26648661e2761355435aa05c5746a090882cd54f13ce06670fb687df085e",
+    "blockNumber": 6,
+    "status": 1,
+    "gasUsed": "146937"
+  }
+]
