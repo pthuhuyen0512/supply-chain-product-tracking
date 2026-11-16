@@ -3,6 +3,7 @@ import { deployment } from './config/index.js';
 import { checkConnection } from './services/blockchain.js';
 import { initializeWalletUI } from './wallet-ui.js';
 import { initializeLookupUI } from './lookup-ui.js';
+import { initializeGasComparison } from './gas-comparison-ui.js';
 
 const paths = {
   box: '<path d="m12 3 9 5v8l-9 5-9-5V8l9-5Z"/><path d="m3 8 9 5 9-5M12 13v8M7.5 5.5l9 5"/>',
@@ -27,6 +28,7 @@ document.querySelector('#app').innerHTML = `
       <a class="nav-link" href="#operations">${icon('box')}Operations</a>
       <a class="nav-link" href="#participants">${icon('shield')}Access control</a>
       <a class="nav-link" href="#qr">${icon('scan')}QR & camera</a>
+      <a class="nav-link" href="#gas-comparison">${icon('grid')}Gas comparison</a>
     </nav>
     <div class="sidebar-bottom"><span class="small-label">LOCAL TEST ENVIRONMENT</span><div><span class="dot"></span>Local Ganache</div><p>Product records on the project’s local blockchain.</p><span class="sidebar-foot">DS441A · TEAM 05</span></div>
   </aside>
@@ -129,6 +131,7 @@ async function refreshNetwork() {
 checkButton.addEventListener('click', refreshNetwork);
 void refreshNetwork();
 
+initializeGasComparison();
 const navLinks = [...document.querySelectorAll('.nav-link')];
 const observer = new IntersectionObserver((entries) => {
   const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -139,7 +142,7 @@ const observer = new IntersectionObserver((entries) => {
     if (active) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current');
   });
 }, { rootMargin: '-10% 0px -45% 0px', threshold: [0, 0.2, 0.6] });
-['overview', 'lookup', 'operations', 'participants', 'qr'].forEach((id) => observer.observe(document.getElementById(id)));
+['overview', 'lookup', 'operations', 'participants', 'qr', 'gas-comparison'].forEach((id) => observer.observe(document.getElementById(id)));
 } catch (error) {
   document.querySelector('#network-label').textContent = 'Application error';
   document.querySelector('#network-dot').className = 'dot error';

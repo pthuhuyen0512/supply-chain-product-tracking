@@ -48,6 +48,15 @@ See [the camera acceptance guide](../docs/lookup-qr-acceptance.md).
 The page does not store configuration or secrets in localStorage. All frontend UI
 text and future additions must be in English.
 
+The **Gas comparison** navigation item integrates the comparison from `1Compare/`
+using a standalone copy of its reviewed rows in `src/data/gas-comparison.json`.
+It works without Ganache or MetaMask. The data is a fixed 16 November 2026 snapshot,
+not live RPC data. Large percentage cards and per-function badges show signed
+`(V2 - V1) / V1 * 100` changes for gas and actual fees. Function filters, gas/fee
+charts, receipt details, a common-price scenario, and full snapshot scopes are
+available in the section. Receipt fees are summed as integer Wei; exact scope
+totals are recomputed from those receipts to avoid source rounding differences.
+
 For complete installation, Ganache deployment, dynamic account mapping and MetaMask
 setup, follow the [root README](../README.md). The latest integration outcome is
 [the step 08 matrix](../docs/verification/integration.md): the fresh MetaMask flow and
