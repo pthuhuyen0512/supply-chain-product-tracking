@@ -47,8 +47,10 @@ forge-std from GitHub, so Git and access to that source are required for install
 ## Repository structure
 
 ```text
-contracts/SupplyChain.sol                             Contract and events
-test/SupplyChain.test.ts                              Contract tests
+contracts/SupplyChain_ver2.sol                        Active SupplyChainV2 contract
+contracts/SupplyChain.sol                             V1 baseline for gas comparison
+test/SupplyChain_ver2.test.ts                          V2 contract regression tests
+test/SupplyChain.test.ts                              V1 baseline tests
 ignition/modules/SupplyChain.ts                       Ignition deployment module
 scripts/export-frontend.mjs                           Verified ABI and local configuration export
 scripts/verify-integration-chain.mjs                  Read-only receipt and history audit
@@ -76,7 +78,7 @@ git --version
 npm.cmd ci
 npx.cmd hardhat compile --build-profile default
 npx.cmd tsc --noEmit
-npx.cmd hardhat test mocha test/SupplyChain.test.ts --build-profile default
+npx.cmd hardhat test mocha test/SupplyChain.test.ts test/SupplyChain_ver2.test.ts --build-profile default
 ```
 
 Install the separate frontend dependencies, then return to the repository root:
@@ -91,7 +93,7 @@ Set-Location ..
 
 The contract tests use an isolated Hardhat network and do not require Ganache or
 MetaMask. The explicit **default** build profile uses optimizer disabled and Paris;
-keep it consistent for this baseline deployment. The production profile enables
+keep it consistent for the V1/V2 source comparison. The production profile enables
 optimizer runs 200 and needs a separate, controlled gas comparison.
 
 ## 2 Start Ganache and read the actual network
@@ -135,8 +137,8 @@ MetaMask signature. The account that deploys receives DEFAULT_ADMIN_ROLE.
 Export verifies the client, actual Chain ID, deployed bytecode, current/recorded
 artifacts, deployment receipt and Admin role before writing:
 
-- `frontend/src/abi/SupplyChain.json`: ABI from the compiled and deployed artifact.
-- `frontend/src/config/deployment.local.json`: contractAddress, rpcUrl and decimal
+- `frontend/src/abi/SupplyChain.json`: ABI from the compiled and deployed V2 artifact.
+- `frontend/src/config/deployment.local.json`: contractName (`SupplyChainV2`), contractAddress, rpcUrl and decimal
   chainId as a string, for this machine and workspace.
 
 The schema is shown in
@@ -151,6 +153,21 @@ The local configuration and journals are ignored by Git. See the
 [configuration guide](frontend/src/config/README.md) for the export checks.
 
 ### Workspace or deployment changes
+
+The active deployment uses `SupplyChainV2` from `contracts/SupplyChain_ver2.sol`.
+Its Ignition ID is `SupplyChainV2Module#SupplyChainV2`, so deploying it alongside
+V1 preserves the old journal and contract. Run the deploy and export commands above
+to migrate; the frontend rejects old configuration without `contractName: "SupplyChainV2"`.
+Export verifies the V2 artifact and on-chain bytecode before writing the new address.
+The shared ABI filename remains `SupplyChain.json` for all frontend consumers.
+
+V2 replaces the 14 project revert strings with custom errors. The frontend decodes
+them using the V2 ABI and displays English messages, including errors during preflight
+and gas estimation. Product fields, events, stage order and QR IDs remain the same.
+Grant participant roles again on the new contract and create new demo products;
+V1 roles, products and history do not migrate. Previous acceptance evidence below
+describes the historical V1 run, not V2 wallet or camera acceptance.
+See [the V2 handoff](docs/CONTRACT_INTERFACE_ver2.md) for the full interface.
 
 Preserve the current workspace and journal for normal restarts. If you deliberately
 change workspaces or reset Ganache, the old receipts and products may no longer

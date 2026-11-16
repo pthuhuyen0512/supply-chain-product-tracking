@@ -129,3 +129,42 @@ test('custom errors, rejection and insufficient funds have readable English mess
   const data = contractInterface.encodeErrorResult('AccessControlUnauthorizedAccount', [A, IDS.Producer]);
   assert.match(readableError({ data }), /required on-chain role/);
 });
+
+test('all V2 custom errors decode from ethers, Ganache and MetaMask payloads', () => {
+  const messages = {
+    InvalidAccount: /zero address/, InvalidRole: /not supported/,
+    EmptyProductId: /Product ID is required/, EmptyName: /Product name is required/,
+    EmptyOrigin: /Origin is required/, ProductExists: /Product exists/,
+    ProductNotFound: /Product not found/, NotCurrentHolder: /current holder/,
+    InvalidReceiver: /zero address/, CannotTransferToSelf: /yourself/,
+    NotDistributor: /Distributor role/, NotRetailer: /Retailer role/,
+    NotCustomer: /Customer role/, AlreadyDelivered: /already been delivered/,
+    AccessControlBadConfirmation: /confirmation address/,
+  };
+  for (const [name, message] of Object.entries(messages)) {
+    const data = contractInterface.encodeErrorResult(name);
+    for (const error of [
+      { data }, { info: { error: { data: { result: data } } } },
+      { data: '0x', error: { data: { originalError: { data } } } },
+      { revert: { name } },
+    ]) assert.match(readableError(error), message, name);
+  }
+  const data = contractInterface.encodeErrorResult('ProductExists');
+  assert.match(readableError({ code: 'ACTION_REJECTED', data }), /rejected in MetaMask/);
+  assert.match(readableError({ data: '0x1234', shortMessage: 'Unknown revert' }), /Unknown revert/);
+  assert.match(readableError({ code: 'NETWORK_ERROR' }), /network is unavailable/);
+});
+
+test('a V2 preflight rejection reports the error without submitting a transaction', async () => {
+  const f = fixture(['Producer']); await f.session.connect();
+  f.session.writer.createProduct.staticCall = async () => {
+    throw { code: 'CALL_EXCEPTION', data: contractInterface.encodeErrorResult('ProductExists') };
+  };
+  const progress = [];
+  await assert.rejects(f.session.transact('createProduct', { productId: 'P', name: 'N', origin: 'O' }, (event) => progress.push(event)));
+  assert.equal(f.writes.length, 0);
+  assert.equal(f.session.busy, false);
+  assert.match(progress.at(-1).message, /Product exists/);
+  assert.equal(progress.at(-1).hash, undefined);
+  f.session.destroy();
+});

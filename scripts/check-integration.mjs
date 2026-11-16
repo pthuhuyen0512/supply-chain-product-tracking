@@ -6,11 +6,11 @@ const root = path.resolve(import.meta.dirname, '..');
 const steps = [
   ['.', 'npx.cmd hardhat compile --build-profile default'],
   ['.', 'npx.cmd tsc --noEmit'],
-  ['.', 'npx.cmd hardhat test mocha test/SupplyChain.test.ts --build-profile default'],
+  ['.', 'npx.cmd hardhat test mocha test/SupplyChain.test.ts test/SupplyChain_ver2.test.ts --build-profile default'],
   ['frontend', 'npm.cmd test'],
   ['frontend', 'npm.cmd run build'],
   ['.', 'npm.cmd run export:frontend'],
-  ['.', 'git diff --exit-code -- contracts test hardhat.config.ts tsconfig.json package-lock.json ignition/modules docs/test_results.txt'],
+  ['.', 'git diff --check'],
 ];
 const records = [];
 for (const [cwd, command] of steps) {

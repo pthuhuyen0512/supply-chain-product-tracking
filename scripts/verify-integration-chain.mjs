@@ -68,10 +68,10 @@ try {
     assert.deepEqual(await snapshot(), before);
     negatives.push({ label, method: 'eth_call staticCall; no transaction', reason, stateUnchanged: true });
   }
-  await reject('Duplicate product ID', () => contract.createProduct.staticCall(productId, 'Duplicate', 'Da Lat', { from: producer }), /Product exists/);
-  await reject('Non-holder handover', () => contract.handoverProduct.staticCall(productId, distributor, { from: admin }), /Not current holder/);
+  await reject('Duplicate product ID', () => contract.createProduct.staticCall(productId, 'Duplicate', 'Da Lat', { from: producer }), /ProductExists/);
+  await reject('Non-holder handover', () => contract.handoverProduct.staticCall(productId, distributor, { from: admin }), /NotCurrentHolder/);
   await reject('Admin without Producer role', () => contract.createProduct.staticCall('STEP08-UNAUTHORIZED', 'Coffee', 'Da Lat', { from: admin }), /AccessControlUnauthorizedAccount/);
-  if (Number(product.stage) === 4) await reject('Handover after Delivered', () => contract.handoverProduct.staticCall(productId, retailer, { from: customer }), /Already delivered/);
+  if (Number(product.stage) === 4) await reject('Handover after Delivered', () => contract.handoverProduct.staticCall(productId, retailer, { from: customer }), /AlreadyDelivered/);
   const unknownId = `STEP08-UNKNOWN-${block}`;
   assert.equal((await contract.getProduct(unknownId)).exists, false); assert.equal((await contract.getHistory(unknownId)).length, 0);
   assert.deepEqual(await snapshot(), before);

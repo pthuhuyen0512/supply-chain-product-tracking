@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { validateDeployment } from '../src/config/validate.js';
 import { checkConnection } from '../src/services/blockchain.js';
 
-const config = { rpcUrl: 'http://127.0.0.1:7545', chainId: '1337', contractAddress: '0x1111111111111111111111111111111111111111' };
+const config = { contractName: 'SupplyChainV2', rpcUrl: 'http://127.0.0.1:7545', chainId: '1337', contractAddress: '0x1111111111111111111111111111111111111111' };
 function rpcFixture(overrides = {}) {
   return async (_url, options) => {
     const { method, id } = JSON.parse(options.body);
@@ -15,7 +15,7 @@ function rpcFixture(overrides = {}) {
 
 test('missing, malformed and unusable configurations have distinct safe results', () => {
   assert.equal(validateDeployment(undefined).code, 'CONFIG_MISSING');
-  for (const raw of ['{broken', null, {}, { ...config, contractAddress: '0x0000000000000000000000000000000000000000' }, { ...config, chainId: 1337 }, { ...config, rpcUrl: 'https://example.com' }]) {
+  for (const raw of ['{broken', null, {}, { ...config, contractName: undefined }, { ...config, contractName: 'SupplyChain' }, { ...config, contractAddress: '0x0000000000000000000000000000000000000000' }, { ...config, chainId: 1337 }, { ...config, rpcUrl: 'https://example.com' }]) {
     assert.equal(validateDeployment(raw).code, 'CONFIG_INVALID');
   }
   assert.deepEqual(validateDeployment(JSON.stringify(config)), { ok: true, value: config });

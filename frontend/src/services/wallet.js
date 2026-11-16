@@ -5,6 +5,24 @@ import { contractInterface } from './blockchain.js';
 export const ROLE_GETTERS = { Admin: 'DEFAULT_ADMIN_ROLE', Producer: 'PRODUCER_ROLE', Distributor: 'DISTRIBUTOR_ROLE', Retailer: 'RETAILER_ROLE', Customer: 'CUSTOMER_ROLE' };
 export const STAGES = ['Not found', 'Produced', 'At distributor', 'At retailer', 'Delivered'];
 const NEXT_ROLES = { 1: ['Producer', 'Distributor'], 2: ['Distributor', 'Retailer'], 3: ['Retailer', 'Customer'] };
+const CONTRACT_ERRORS = {
+  InvalidAccount: 'The account receiving a role cannot be the zero address.',
+  InvalidRole: 'This role is not supported.',
+  EmptyProductId: 'Product ID is required.',
+  EmptyName: 'Product name is required.',
+  EmptyOrigin: 'Origin is required.',
+  ProductExists: 'Product exists: this product ID has already been used.',
+  ProductNotFound: 'Product not found.',
+  NotCurrentHolder: 'Only the current holder can hand over this product.',
+  InvalidReceiver: 'The recipient cannot be the zero address.',
+  CannotTransferToSelf: 'You cannot hand over a product to yourself.',
+  NotDistributor: 'The recipient needs the Distributor role.',
+  NotRetailer: 'The recipient needs the Retailer role.',
+  NotCustomer: 'The recipient needs the Customer role.',
+  AlreadyDelivered: 'This product has already been delivered and cannot be handed over again.',
+  AccessControlUnauthorizedAccount: 'The wallet does not have the required on-chain role. Refresh roles and select the correct account.',
+  AccessControlBadConfirmation: 'The wallet confirmation address is incorrect.',
+};
 
 export function requiredText(value, label) {
   const text = String(value ?? '').trim();
@@ -35,12 +53,15 @@ export function readableError(error) {
   if (code === 'INSUFFICIENT_FUNDS') return 'This wallet needs more local test ETH to pay for gas.';
   if (code === 'TRANSACTION_REPLACED' && error.cancelled) return 'The transaction was cancelled or replaced in the wallet.';
   if (code === 'TIMEOUT') return 'Confirmation timed out. The transaction may still be pending; check its hash before retrying.';
-  const data = error?.data ?? error?.info?.error?.data?.result ?? error?.info?.error?.data;
-  if (typeof data === 'string' && data.startsWith('0x')) {
+  // ethers may decode the revert itself; Ganache/MetaMask can nest raw data.
+  if (CONTRACT_ERRORS[error?.revert?.name]) return CONTRACT_ERRORS[error.revert.name];
+  const candidates = [error?.data, error?.info?.error?.data, error?.error?.data];
+  for (const candidate of candidates) {
+    const data = typeof candidate === 'string' ? candidate : candidate?.result ?? candidate?.data ?? candidate?.originalError?.data;
+    if (typeof data !== 'string' || !data.startsWith('0x')) continue;
     try {
       const parsed = contractInterface.parseError(data);
-      if (parsed?.name === 'AccessControlUnauthorizedAccount') return 'The wallet does not have the required on-chain role. Refresh roles and select the correct account.';
-      if (parsed?.name === 'AccessControlBadConfirmation') return 'The wallet confirmation address is incorrect.';
+      if (CONTRACT_ERRORS[parsed?.name]) return CONTRACT_ERRORS[parsed.name];
       if (parsed?.name === 'Error') return `Contract rejected the operation: ${parsed.args[0]}`;
     } catch { /* Use a safe text fallback below. */ }
   }

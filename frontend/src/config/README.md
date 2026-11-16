@@ -18,12 +18,19 @@ the optimizer with 200 runs and must be recorded separately if used. Ignition pi
 production unless a profile is specified, so the npm deploy script explicitly uses default.
 Deployment uses Ganache's unlocked accounts; no private key or MetaMask is required.
 
-Export reads the URL from Hardhat configuration, Chain ID from RPC, address from
-`ignition/deployments/chain-<Chain ID>/deployed_addresses.json`, and ABI from the
-actual SupplyChain artifact. It checks artifacts, bytecode, receipt, and Admin access
+Export reads the URL from Hardhat configuration, Chain ID from RPC, and the
+`SupplyChainV2Module#SupplyChainV2` address from
+`ignition/deployments/chain-<Chain ID>/deployed_addresses.json`. ABI comes from the
+`artifacts/contracts/SupplyChain_ver2.sol/SupplyChainV2.json` artifact.
+It checks artifacts, bytecode, receipt, and Admin access
 before writing the ignored `deployment.local.json` and `../abi/SupplyChain.json`.
 On failure it exits with code 1 and warns that existing files may be stale. Do not use
 them until export succeeds. Do not automatically delete journals or reset Ganache.
+
+The export includes `contractName: "SupplyChainV2"`; configuration from V1 is rejected.
+The ABI filename stays `SupplyChain.json` but contains V2 custom errors and tuple types.
+V2 uses its own Ignition module ID to preserve the V1 deployment. Grant roles again
+and create new products on V2; old roles and product history stay on V1.
 
 After recompiling without contract/profile changes, run export again. If the source,
 profile, or workspace changes, inspect the journal and rerun the commands above.

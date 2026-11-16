@@ -26,6 +26,76 @@
     "type": "error"
   },
   {
+    "inputs": [],
+    "name": "AlreadyDelivered",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "CannotTransferToSelf",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EmptyName",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EmptyOrigin",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "EmptyProductId",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidAccount",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidReceiver",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "InvalidRole",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotCurrentHolder",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotCustomer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotDistributor",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "NotRetailer",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ProductExists",
+    "type": "error"
+  },
+  {
+    "inputs": [],
+    "name": "ProductNotFound",
+    "type": "error"
+  },
+  {
     "anonymous": false,
     "inputs": [
       {
@@ -284,12 +354,12 @@
             "type": "uint64"
           },
           {
-            "internalType": "enum SupplyChain.Stage",
+            "internalType": "enum SupplyChainV2.Stage",
             "name": "stage",
             "type": "uint8"
           }
         ],
-        "internalType": "struct SupplyChain.Handover[]",
+        "internalType": "struct SupplyChainV2.Handover[]",
         "name": "",
         "type": "tuple[]"
       }
@@ -325,7 +395,7 @@
             "type": "address"
           },
           {
-            "internalType": "enum SupplyChain.Stage",
+            "internalType": "enum SupplyChainV2.Stage",
             "name": "stage",
             "type": "uint8"
           },
@@ -340,7 +410,7 @@
             "type": "bool"
           }
         ],
-        "internalType": "struct SupplyChain.Product",
+        "internalType": "struct SupplyChainV2.Product",
         "name": "",
         "type": "tuple"
       }

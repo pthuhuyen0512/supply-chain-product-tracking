@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { Contract, FetchRequest, JsonRpcProvider, ZeroHash, getAddress } from "ethers";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
-const futureId = "SupplyChainModule#SupplyChain";
+const futureId = "SupplyChainV2Module#SupplyChainV2";
 const configPath = path.join(root, "frontend/src/config/deployment.local.json");
 
 async function readJson(filename) {
@@ -16,11 +16,11 @@ async function readJson(filename) {
 }
 
 function checkArtifact(artifact, label) {
-  if (artifact.contractName !== "SupplyChain" ||
-      artifact.sourceName !== "contracts/SupplyChain.sol" ||
+  if (artifact.contractName !== "SupplyChainV2" ||
+      artifact.sourceName !== "contracts/SupplyChain_ver2.sol" ||
       !Array.isArray(artifact.abi) || artifact.abi.length === 0 ||
       !/^0x[0-9a-f]+$/i.test(artifact.deployedBytecode ?? "")) {
-    throw new Error(`${label}: invalid SupplyChain artifact; compile and deploy first.`);
+    throw new Error(`${label}: invalid SupplyChainV2 artifact; compile and deploy first.`);
   }
 }
 
@@ -48,7 +48,7 @@ try {
   const deploymentDir = path.join(hre.config.paths.ignition, "deployments", `chain-${chainId}`);
   const addresses = await readJson(path.join(deploymentDir, "deployed_addresses.json"));
   const contractAddress = getAddress(addresses[futureId]);
-  const artifact = await readJson(path.join(root, "artifacts/contracts/SupplyChain.sol/SupplyChain.json"));
+  const artifact = await readJson(path.join(root, "artifacts/contracts/SupplyChain_ver2.sol/SupplyChainV2.json"));
   const deployedArtifact = await readJson(path.join(deploymentDir, "artifacts", `${futureId}.json`));
   checkArtifact(artifact, "Current artifact");
   checkArtifact(deployedArtifact, "Ignition artifact");
@@ -83,7 +83,7 @@ try {
   if (adminRole !== ZeroHash || !deployerIsAdmin) {
     throw new Error("Deployer is not the current DEFAULT_ADMIN_ROLE holder.");
   }
-  const output = { contractAddress, rpcUrl, chainId };
+  const output = { contractName: "SupplyChainV2", contractAddress, rpcUrl, chainId };
   // Validate every input before replacing generated files. Repeated exports are deterministic.
   const abiPath = path.join(root, "frontend/src/abi/SupplyChain.json");
   await fs.mkdir(path.dirname(abiPath), { recursive: true });
