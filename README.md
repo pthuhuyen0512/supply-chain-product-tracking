@@ -47,17 +47,17 @@ forge-std from GitHub, so Git and access to that source are required for install
 ## Repository structure
 
 ```text
-contracts/SupplyChain.sol             Contract and events
-test/SupplyChain.test.ts              Contract tests
-ignition/modules/SupplyChain.ts       Ignition deployment module
-scripts/export-frontend.mjs           Verified ABI and local configuration export
-scripts/verify-integration-chain.mjs  Read-only receipt and history audit
-frontend/                            Vite HTML, CSS and JavaScript application
-frontend/src/services/                Environment, wallet, product and camera logic
-frontend/src/abi/SupplyChain.json      Exported ABI
-frontend/src/config/                  Example and validated local configuration
-docs/verification/                   Logs, receipts and original screenshots
-docs/reports/                        Manual acceptance Word records
+contracts/SupplyChain.sol                             Contract and events
+test/SupplyChain.test.ts                              Contract tests
+ignition/modules/SupplyChain.ts                       Ignition deployment module
+scripts/export-frontend.mjs                           Verified ABI and local configuration export
+scripts/verify-integration-chain.mjs                  Read-only receipt and history audit
+frontend/                                             Vite HTML, CSS and JavaScript application
+frontend/src/services/                                Environment, wallet, product and camera logic
+frontend/src/abi/SupplyChain.json                     Exported ABI
+frontend/src/config/                                  Example and validated local configuration
+docs/verification/                                    Logs, receipts and original screenshots
+docs/reports/                                         Manual acceptance Word records
 docs/report-quoc.md                   Frontend and integration report section
 docs/group-report-inputs.md           Outstanding group inputs
 docs/group-report-outline.md          Five-page group report outline
