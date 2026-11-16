@@ -2,6 +2,11 @@
   "name": "supply-chain-product-tracking",
   "version": "1.0.0",
   "type": "module",
+  "scripts": {
+    "deploy:local": "hardhat ignition deploy ignition/modules/SupplyChain.ts --network ganache --build-profile default",
+    "export:frontend": "node scripts/export-frontend.mjs",
+    "verify:demo": "node scripts/verify-wallet-demo.mjs"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.2.2",
     "@nomicfoundation/hardhat-ignition": "^3.1.9",
