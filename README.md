@@ -46,6 +46,11 @@ forge-std from GitHub, so Git and access to that source are required for install
 
 ## Repository structure
 
+For review, start with source, tests, setup instructions and `docs/reports/`.
+Internal AI instructions, implementation diaries, report outlines and document
+formatting QA records are archived in `trash/`; see [the move list](trash/README.txt).
+They are not required to run, deploy or test the application.
+
 ```text
 contracts/SupplyChain_ver2.sol                        Active SupplyChainV2 contract
 contracts/SupplyChain.sol                             V1 baseline for gas comparison
@@ -61,8 +66,8 @@ frontend/src/config/                                  Example and validated loca
 docs/verification/                                    Logs, receipts and original screenshots
 docs/reports/                                         Manual acceptance Word records
 docs/report-quoc.md                   Frontend and integration report section
-docs/group-report-inputs.md           Outstanding group inputs
-docs/group-report-outline.md          Five-page group report outline
+trash/docs/group-report-inputs.md           Archived drafting checklist
+trash/docs/group-report-outline.md          Archived report outline
 ```
 
 ## 1 Install dependencies and check the contract
@@ -285,9 +290,9 @@ transfer until the required role is restored. No external contract call is made
 in the create/handover paths, but the group security analysis remains Huyen's section.
 
 The [Quoc report section](docs/report-quoc.md) and
-[five-page group outline](docs/group-report-outline.md) are prepared. **Measured
+[five-page group outline](trash/docs/group-report-outline.md) are prepared. **Measured
 baseline/optimized gas comparison and the final 4–6-page group report are not yet
-complete.** The [input checklist](docs/group-report-inputs.md) lists what Huyen
+complete.** The [input checklist](trash/docs/group-report-inputs.md) lists what Huyen
 must supply. Receipt gas from this UI run is supporting baseline evidence, not
 proof of an optimization. Clean-copy acceptance and the demo rehearsal belong to
 step 10 and have not been claimed complete here.

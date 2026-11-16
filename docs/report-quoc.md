@@ -177,6 +177,6 @@ the matching environment.
 The receipt gas above belongs to one unoptimized baseline run. It is not a measured
 before/after comparison. Huyen must provide the gas measurements and explanation
 of the implemented optimization, plus the final contract/security report section.
-[The group inputs](group-report-inputs.md) and
-[five-page outline](group-report-outline.md) record these open items. The final
+[The group inputs](../trash/docs/group-report-inputs.md) and
+[five-page outline](../trash/docs/group-report-outline.md) record these open items. The final
 4–6-page group report and clean-copy/demo rehearsal are not claimed complete.
