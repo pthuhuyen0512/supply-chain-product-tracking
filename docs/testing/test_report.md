@@ -1,14 +1,28 @@
 # SupplyChain Smart Contract Test Report
 
+**Prepared by:** Phạm Thu Huyền
+**Student ID:** 29201139715
+**Project:** DS441A - Team 5 - Supply Chain Product Tracking
+
 ## 1. Objective and scope
 
-This report verifies role-based access control, product creation, sequential custody transfers, and public history retrieval. It also checks that invalid operations revert with the expected errors.
+This report evaluates two versions of the SupplyChain contract:
+the baseline version (V1) and the optimized version (V2), which replaces
+application-defined revert strings with custom errors.
+
+Both versions are tested using the same 27 scenarios covering access
+control, product creation, sequential handovers, events, history retrieval,
+and invalid operations. The tests also verify that the optimization
+preserves the expected behavior in these scenarios.
+
+Sections 1–5 present the baseline contract (V1) tests. Section 6 summarizes
+verification of the optimized contract (V2) using the same test scenarios.
 
 | Item | Description |
 | --- | --- |
-| Contract | [SupplyChain.sol](../contracts/SupplyChain.sol) |
-| Test suite | [SupplyChain.test.ts](../test/SupplyChain.test.ts) |
-| Execution evidence | [Raw test log](test_results.txt) |
+| Baseline contract (V1) | [SupplyChain.sol](../../contracts/SupplyChain.sol) |
+| V1 test suite | [SupplyChain.test.ts](../../test/SupplyChain.test.ts) |
+| V1 execution evidence | [Baseline test log](test_results.txt) |
 | Framework | Hardhat 3, Mocha, Chai, ethers v6 |
 | Network | Isolated Hardhat simulated blockchain |
 | Compiler configuration | Solidity 0.8.34, EVM target Paris, default profile with optimizer disabled |
@@ -22,9 +36,11 @@ The tests use a sample product with an ID, name, and origin. These values are us
 Assertions check stored data, role membership, event arguments, and history entries. Controlled block timestamps verify the exact timestamps recorded by the contract. Invalid operations are checked using `revertedWith` or `revertedWithCustomError`, including error arguments where applicable. Selected rejection cases also verify that product data and history remain unchanged.
 
 
-## 3. Results
+## 3. Baseline Test Results (V1)
 
-The linked log records **27 passing tests** and **no failing tests** ( test_results.txt)
+The [baseline execution log](test_results.txt) records **27 passing tests**
+and **no failures** for V1. The tables below describe these baseline test scenarios.
+Each test case may contain multiple related assertions or attempted operations.
 
 ### 3.1 Role registration and Access control
 
@@ -91,8 +107,39 @@ Rejection tests cover empty inputs, duplicate IDs, invalid recipients, revoked r
 | Events and blockchain timestamps | TC1-TC5, TC8, TC16 |
 | 3 require/revert scenarios | TC18, TC20, TC26, additional rejection cases |
 
-The recorded results satisfy the automated testing requirements for the main contract functions and 3 failure scenarios.
+The recorded results satisfy the automated testing requirements for the main
+contract functions and three failure scenarios. They demonstrate the
+tested behavior rather than proving the absence of all possible vulnerabilities.
 
-This report covers contract tests on the Hardhat simulated network. 
---> Ganache deployment, MetaMask, frontend integration, QR scanning, and gas optimization require separate validation.
+This report covers contract tests on the Hardhat simulated network. Ganache
+deployment, MetaMask, frontend integration, and QR scanning require separate
+validation.
 
+## 6. Verification after Optimization (V2)
+
+After replacing application-defined revert strings with custom errors,
+the same 27 test scenarios were executed for both SupplyChain V1 and V2.
+V1 passed 27 tests and V2 passed 27 tests, giving **54 passing tests**
+and **no failures** in the combined run. The baseline tables are not repeated
+because the same scenarios were used for V2.
+
+The results confirm that V2 preserves the expected behavior in the tested
+scenarios, including role-based access control, product creation, sequential
+handovers, event emission, and history retrieval. Rejection tests were
+updated to check the corresponding custom errors in V2. Inherited AccessControl
+custom errors and their account/role arguments remain checked in both versions.
+
+| Item | Reference |
+| --- | --- |
+| Optimized contract (V2) | [SupplyChain_ver2.sol](../../contracts/SupplyChain_ver2.sol) |
+| V2 test suite | [SupplyChain_ver2.test.ts](../../test/SupplyChain_ver2.test.ts) |
+| Combined V1/V2 execution evidence | [test_results_v1_v2.txt](test_results_v1_v2.txt) |
+
+To reproduce the baseline and combined verification, run from the repository root:
+
+```powershell
+npx.cmd hardhat compile --build-profile default
+npx.cmd tsc --noEmit
+npx.cmd hardhat test mocha test/SupplyChain.test.ts --build-profile default
+npx.cmd hardhat test mocha test/SupplyChain.test.ts test/SupplyChain_ver2.test.ts --build-profile default
+```

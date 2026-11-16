@@ -1,0 +1,10 @@
+operation,before_gas,after_gas,reduction_gas,reduction_percent
+deploy,2503225,2152495,350730,14.0111
+grant_producer,52223,52223,0,0.0000
+grant_distributor,52222,52222,0,0.0000
+grant_retailer,52245,52245,0,0.0000
+grant_customer,52256,52256,0,0.0000
+create_product,146865,146865,0,0.0000
+handover_1,87198,87198,0,0.0000
+handover_2,87478,87478,0,0.0000
+handover_3,87746,87746,0,0.0000

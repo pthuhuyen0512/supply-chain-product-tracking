@@ -1,0 +1,71 @@
+No contracts to compile
+
+Running Mocha tests
+
+
+  SupplyChain
+    Role registration and access control
+      √ assigns the deployer as admin without granting producer privileges (218ms)
+      √ allows admin to grant and revoke producer, emitting correct events
+      √ allows admin to grant and revoke distributor, emitting correct events
+      √ allows admin to grant and revoke retailer, emitting correct events
+      √ allows admin to grant and revoke customer, emitting correct events
+      √ rejects role grants and revocations by a non-admin (56ms)
+      √ rejects registration of the zero address and unknown roles
+    Product creation and public lookup
+      √ stores product data and creation history with the actual block timestamp (41ms)
+      √ rejects creation by an unregistered account and admin without producer role
+      √ rejects an empty product ID
+      √ rejects an empty product name
+      √ rejects an empty product origin
+      √ rejects duplicate IDs without overwriting product data or history (38ms)
+      √ returns absent product data and empty history for an unknown ID
+      √ keeps products and their histories independent
+    Handover and complete supply chain history
+      √ tracks all three handovers, exact events, timestamps and public history
+      √ rejects handover of a nonexistent product
+      √ rejects an unregistered sender and a registered non-holder
+      √ rejects the zero address and self-transfer even with multiple roles
+      √ rejects wrong or unregistered receivers at handover 1, preserving state
+      √ blocks a revoked sender at handover 1 until the role is restored
+      √ rejects wrong or unregistered receivers at handover 2, preserving state
+      √ blocks a revoked sender at handover 2 until the role is restored
+      √ rejects wrong or unregistered receivers at handover 3, preserving state
+      √ blocks a revoked sender at handover 3 until the role is restored
+      √ removes the previous holder's ability to transfer after a successful handover
+      √ prevents further handovers after customer delivery, even to a registered receiver
+
+  SupplyChainV2
+    Role registration and access control
+      √ assigns the deployer as admin without granting producer privileges
+      √ allows admin to grant and revoke producer, emitting correct events
+      √ allows admin to grant and revoke distributor, emitting correct events
+      √ allows admin to grant and revoke retailer, emitting correct events
+      √ allows admin to grant and revoke customer, emitting correct events
+      √ rejects role grants and revocations by a non-admin
+      √ rejects registration of the zero address and unknown roles
+    Product creation and public lookup
+      √ stores product data and creation history with the actual block timestamp
+      √ rejects creation by an unregistered account and admin without producer role
+      √ rejects an empty product ID
+      √ rejects an empty product name
+      √ rejects an empty product origin
+      √ rejects duplicate IDs without overwriting product data or history
+      √ returns absent product data and empty history for an unknown ID
+      √ keeps products and their histories independent
+    Handover and complete supply chain history
+      √ tracks all three handovers, exact events, timestamps and public history
+      √ rejects handover of a nonexistent product
+      √ rejects an unregistered sender and a registered non-holder
+      √ rejects the zero address and self-transfer even with multiple roles
+      √ rejects wrong or unregistered receivers at handover 1, preserving state
+      √ blocks a revoked sender at handover 1 until the role is restored
+      √ rejects wrong or unregistered receivers at handover 2, preserving state
+      √ blocks a revoked sender at handover 2 until the role is restored
+      √ rejects wrong or unregistered receivers at handover 3, preserving state
+      √ blocks a revoked sender at handover 3 until the role is restored
+      √ removes the previous holder's ability to transfer after a successful handover
+      √ prevents further handovers after customer delivery, even to a registered receiver
+
+
+  54 passing (856ms)

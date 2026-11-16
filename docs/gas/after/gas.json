@@ -1,0 +1,115 @@
+{
+  "measuredAt": "2026-11-16T08:52:18.653Z",
+  "version": "after",
+  "contractName": "SupplyChainV2",
+  "sourceName": "contracts/SupplyChain_ver2.sol",
+  "sourceSha256": "3e6b773b301e299c29a67a251b36cb9f2a59d2e4ad0c0f1ea6f027d4767b66bd",
+  "buildInfoId": "solc-0_8_34-3d75bfe8c96b7f2ce347522bc07705b69ad215d4",
+  "compiler": "0.8.34",
+  "compilerLongVersion": "0.8.34+commit.80d5c536",
+  "compilerSettings": {
+    "evmVersion": "paris",
+    "optimizer": {
+      "enabled": false
+    },
+    "outputSelection": {
+      "*": {
+        "": [
+          "ast"
+        ],
+        "*": [
+          "abi",
+          "evm.bytecode.linkReferences",
+          "evm.bytecode.object",
+          "evm.bytecode.opcodes",
+          "evm.bytecode.sourceMap",
+          "evm.deployedBytecode.immutableReferences",
+          "evm.deployedBytecode.linkReferences",
+          "evm.deployedBytecode.object",
+          "evm.deployedBytecode.opcodes",
+          "evm.deployedBytecode.sourceMap",
+          "evm.methodIdentifiers"
+        ]
+      }
+    },
+    "remappings": [
+      "project/:@openzeppelin/contracts/=npm/@openzeppelin/contracts@5.6.1/"
+    ]
+  },
+  "network": "Isolated Hardhat simulated blockchain; not Ganache",
+  "chainId": "31337",
+  "rpcClient": "HardhatNetwork/3.21.2/@nomicfoundation/edr/0.3.8",
+  "nodeVersion": "v26.13.0",
+  "contractAddress": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+  "deployedBytecodeBytes": 9611,
+  "input": {
+    "productId": "PRODUCT-001",
+    "name": "Sample Product",
+    "origin": "Sample Origin"
+  },
+  "accounts": {
+    "admin": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "producer": "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
+    "distributor": "0x3C44CdDdB6a900fa2b585dd299e03d12FA4293BC",
+    "retailer": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "customer": "0x15d34AAf54267DB7D7c367839AAf71A00a2C6A65"
+  },
+  "initialState": "Fresh chain and contract; each participant role granted once; one new product",
+  "measurement": "Successful transaction receipt.gasUsed (gas units), not estimates or fees",
+  "measurements": [
+    {
+      "operation": "deploy",
+      "gasUsed": "2152495",
+      "transactionHash": "0xf360ffa00eb2f92bef627f59157f432f0c7840c22bd535a4b3123fc5e6647223",
+      "blockNumber": 1
+    },
+    {
+      "operation": "grant_producer",
+      "gasUsed": "52223",
+      "transactionHash": "0xba21c3ea2a09c8d1698eeb50d6f32e30bc7f422a5847d58c700cdc6084d415b6",
+      "blockNumber": 2
+    },
+    {
+      "operation": "grant_distributor",
+      "gasUsed": "52222",
+      "transactionHash": "0x62061591c4a2cc4f3a4b3ebcf48cc7e692253a3f9381d303f02b92305a11fca2",
+      "blockNumber": 3
+    },
+    {
+      "operation": "grant_retailer",
+      "gasUsed": "52245",
+      "transactionHash": "0x70357c1063df2c81969ee9518d4d106f15216c63096ec8428c7ef4a047610351",
+      "blockNumber": 4
+    },
+    {
+      "operation": "grant_customer",
+      "gasUsed": "52256",
+      "transactionHash": "0x45f9eaf13983baf6a394b2df828ef8c02aad75c5861c97affaa307114cfcf873",
+      "blockNumber": 5
+    },
+    {
+      "operation": "create_product",
+      "gasUsed": "146865",
+      "transactionHash": "0x1d0b0645c474d2b7c750c2c6b00157003bb0a7f84163aee0a21535650c6c6f9f",
+      "blockNumber": 6
+    },
+    {
+      "operation": "handover_1",
+      "gasUsed": "87198",
+      "transactionHash": "0xdbb1d3abd6e1ff837452fef119a3f9031430d5eb45b853dc32a05e8d8e8dc443",
+      "blockNumber": 7
+    },
+    {
+      "operation": "handover_2",
+      "gasUsed": "87478",
+      "transactionHash": "0x9f8b6b5bb85df1576b1985bbbfe7b20b9b4d97a3574f54ea0e16741702ee03f2",
+      "blockNumber": 8
+    },
+    {
+      "operation": "handover_3",
+      "gasUsed": "87746",
+      "transactionHash": "0xd6a7cfde18a1ef3933862f94dbc12d0efcc32a7a20417b3f10d63ee8f2640d89",
+      "blockNumber": 9
+    }
+  ]
+}
