@@ -44,8 +44,15 @@
 /scripts/send-op-tx.ts
 
 # Local deployment records
-#/ignition/deployments/
+# Keep local Ignition journals out of Git; retain public deployment summaries separately.
+/ignition/deployments/
 
 # Frontend generated files
-#/frontend/node_modules/
-#/frontend/dist/
+/frontend/node_modules/
+/frontend/dist/
+
+# Generated configuration for the local deployment (step 03)
+/frontend/src/config/deployment.local.json
+
+# Machine-specific public demo account mapping
+/docs/local-demo.local.md
