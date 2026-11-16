@@ -1,7 +1,9 @@
 # SupplyChain Gas Optimization Report
 
 **Prepared by:** Phạm Thu Huyền
+
 **Student ID:** 29201139715
+
 **Project:** DS441A - Team 5 - Supply Chain Product Tracking
 
 ## 1. Objective and Compared Versions
