@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-17",
+  "files": [
+    {
+      "original": "docs/quoc-implementation/00-START-HERE.md",
+      "archived": "trash/docs/quoc-implementation/00-START-HERE.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 7613,
+      "sha256": "26be608b096127c2fb3c8663e17ef9044adfa8614d6e857528cc73d8cef75b96"
+    },
+    {
+      "original": "docs/quoc-implementation/01-environment.md",
+      "archived": "trash/docs/quoc-implementation/01-environment.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3022,
+      "sha256": "6ade8d0eb8e19ebbf458109560083d090480b422ad3725ce6f2516ef766349b0"
+    },
+    {
+      "original": "docs/quoc-implementation/02-ganache.md",
+      "archived": "trash/docs/quoc-implementation/02-ganache.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 2708,
+      "sha256": "456aaeedf8cebc11b5988defdb3944ac202e5f650bdce319f017c1ef50ad0b38"
+    },
+    {
+      "original": "docs/quoc-implementation/03-deploy-export.md",
+      "archived": "trash/docs/quoc-implementation/03-deploy-export.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3848,
+      "sha256": "143edc20e1bdcc0ff2b388eab7715a01e7f91262d560c11f03fb24dc9af92c25"
+    },
+    {
+      "original": "docs/quoc-implementation/04-metamask.md",
+      "archived": "trash/docs/quoc-implementation/04-metamask.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 2761,
+      "sha256": "9cfce0cad41d67c7aaa63318cb189357bbabdb7096be4fd03a9ee82878bb62a1"
+    },
+    {
+      "original": "docs/quoc-implementation/05-frontend-foundation.md",
+      "archived": "trash/docs/quoc-implementation/05-frontend-foundation.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3122,
+      "sha256": "44d0547f99b706595433b5ab157dd4f954b24cee2066b855033b7c493e7fc71d"
+    },
+    {
+      "original": "docs/quoc-implementation/06-wallet-transactions.md",
+      "archived": "trash/docs/quoc-implementation/06-wallet-transactions.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3838,
+      "sha256": "1d1c299ad2ec49a2095fbbe23b924462a197fc25be738a67e39f42df8bf60d8a"
+    },
+    {
+      "original": "docs/quoc-implementation/07-lookup-qr.md",
+      "archived": "trash/docs/quoc-implementation/07-lookup-qr.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3336,
+      "sha256": "1c5b97ee9fb7f59c12700941b1e1b6457d11540819b84b6e2c0f68b63a69db7f"
+    },
+    {
+      "original": "docs/quoc-implementation/08-integration.md",
+      "archived": "trash/docs/quoc-implementation/08-integration.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3328,
+      "sha256": "d3fd25ad9785f5208857c6c0f87b4985ed4f21f3a647066f7541e53cbed12ea8"
+    },
+    {
+      "original": "docs/quoc-implementation/09-readme-report.md",
+      "archived": "trash/docs/quoc-implementation/09-readme-report.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 3963,
+      "sha256": "566e18266290e5cd06b4eed816e291cef06e659fa16a098156577630aa3cab76"
+    },
+    {
+      "original": "docs/quoc-implementation/10-clean-clone-demo.md",
+      "archived": "trash/docs/quoc-implementation/10-clean-clone-demo.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 4332,
+      "sha256": "e8019a6e4269cfde20d2ddc208fd1be7a5aff5a8b51c4d6debd586c8fae4dcd1"
+    },
+    {
+      "original": "docs/quoc-implementation/PROGRESS.md",
+      "archived": "trash/docs/quoc-implementation/PROGRESS.md",
+      "reason": "Huong dan AI tung buoc va nhat ky tien do noi bo; khong phai tai lieu nop.",
+      "bytes": 50188,
+      "sha256": "c52b0c2676e397021d1b8b40dd50b490c117e3401534b26c6fa44fa90f4518e3"
+    },
+    {
+      "original": "docs/report-quoc-ai-guide.md",
+      "archived": "trash/docs/report-quoc-ai-guide.md",
+      "reason": "Prompt, checklist va dan y soan bao cao; da co bao cao trong docs/reports.",
+      "bytes": 28374,
+      "sha256": "ae92341324038d3091ca1463d8b31f1d7fea76b53548b9dd78727cfcafee9f33"
+    },
+    {
+      "original": "docs/group-report-inputs.md",
+      "archived": "trash/docs/group-report-inputs.md",
+      "reason": "Prompt, checklist va dan y soan bao cao; da co bao cao trong docs/reports.",
+      "bytes": 6743,
+      "sha256": "8f83932eba8d968d52b6abaa48341cd35bbc18af25c0a0aa861bc877d4d2a464"
+    },
+    {
+      "original": "docs/group-report-outline.md",
+      "archived": "trash/docs/group-report-outline.md",
+      "reason": "Prompt, checklist va dan y soan bao cao; da co bao cao trong docs/reports.",
+      "bytes": 5265,
+      "sha256": "1bbbd6fab837f6cadff64af3cac7c01c0494c96ba4fd12d75154f64992e5c444"
+    },
+    {
+      "original": "scripts/build-quoc-report.py",
+      "archived": "trash/scripts/build-quoc-report.py",
+      "reason": "Script tao tai lieu Word tu bang chung cu; khong duoc npm/deploy/build/test goi.",
+      "bytes": 22612,
+      "sha256": "d285a2dca57950262e3f35ae79318b2a1d34348a92033b29ba4fefee35c0d7c4"
+    },
+    {
+      "original": "scripts/build-step06-acceptance-report.py",
+      "archived": "trash/scripts/build-step06-acceptance-report.py",
+      "reason": "Script tao tai lieu Word tu bang chung cu; khong duoc npm/deploy/build/test goi.",
+      "bytes": 19938,
+      "sha256": "a6b64a78cbb0b6b6ba67dace617dc5c83423f723cc23017f8de6ad2498eb0dc6"
+    },
+    {
+      "original": "scripts/build-step08-acceptance-report.py",
+      "archived": "trash/scripts/build-step08-acceptance-report.py",
+      "reason": "Script tao tai lieu Word tu bang chung cu; khong duoc npm/deploy/build/test goi.",
+      "bytes": 15388,
+      "sha256": "e48bddabcbe7f43ec2ffc60fa804bd915270835e14cb0cdfe2f0cd35e2af9993"
+    },
+    {
+      "original": "docs/verification/report-quoc-quality.json",
+      "archived": "trash/docs/verification/report-quoc-quality.json",
+      "reason": "Ket qua QA dinh dang/tai lieu noi bo; khong phai ket qua kiem thu ung dung.",
+      "bytes": 497,
+      "sha256": "330172a995259baa326f09d0fbc7c68118fd42a167f1d1942c9911e0490f045b"
+    },
+    {
+      "original": "docs/verification/step06-report-quality.json",
+      "archived": "trash/docs/verification/step06-report-quality.json",
+      "reason": "Ket qua QA dinh dang/tai lieu noi bo; khong phai ket qua kiem thu ung dung.",
+      "bytes": 692,
+      "sha256": "4728d5d8db32f96d13f0fa2289668b14366535f8843b2e43c1a2f509b58108a4"
+    },
+    {
+      "original": "docs/verification/step08-report-quality.json",
+      "archived": "trash/docs/verification/step08-report-quality.json",
+      "reason": "Ket qua QA dinh dang/tai lieu noi bo; khong phai ket qua kiem thu ung dung.",
+      "bytes": 753,
+      "sha256": "f18ad9c44a46bd75f60e4ce9d93bdea0423524527ce675c60d594c6b78af6de2"
+    },
+    {
+      "original": "docs/verification/readme-report.json",
+      "archived": "trash/docs/verification/readme-report.json",
+      "reason": "Ket qua QA dinh dang/tai lieu noi bo; khong phai ket qua kiem thu ung dung.",
+      "bytes": 7621,
+      "sha256": "ee4d2a81bb5ce6bb6ec79c7d7933a785f8d03604642c1e1e86365a533b599a10"
+    }
+  ]
+}

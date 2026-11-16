@@ -1,0 +1,24 @@
+{
+  "note": "Public snapshot for the selected new local workspace; not a portable frontend configuration.",
+  "verifiedDate": "2026-11-16",
+  "network": "ganache",
+  "contractAddress": "0x843B273a8c67BcaB604f14fd466162CBdBb556B9",
+  "rpcUrl": "http://127.0.0.1:7545",
+  "chainId": "1337",
+  "client": "Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js",
+  "deployer": "0x2FE82257462dc3095D497e6ce446b2ce1Bba25ec",
+  "adminRole": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "deployerIsAdmin": true,
+  "transactionHash": "0x7e4212bb316487c9c436a3a65093a18f5ebdd1fb658de19dcedf3cf0ecf4de67",
+  "blockNumber": 1,
+  "gasUsed": "2502495",
+  "bytecodeBytes": 11249,
+  "abiEntries": 23,
+  "buildProfile": "default",
+  "compiler": "0.8.34",
+  "evmVersion": "paris",
+  "optimizer": {
+    "enabled": false
+  },
+  "workspace": "NOISELESS-MAGIC"
+}

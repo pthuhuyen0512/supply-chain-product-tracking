@@ -1,0 +1,23 @@
+{
+  "note": "Public verification snapshot for this local workspace only; not a portable frontend config.",
+  "verifiedDate": "2026-11-15",
+  "network": "ganache",
+  "contractAddress": "0x8B52d5D247fa21Af5D471FcD73991fF6Aaf56fda",
+  "rpcUrl": "http://127.0.0.1:7545",
+  "chainId": "1337",
+  "client": "Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js",
+  "deployer": "0x4BAe880df29E1d5A76Fa973be01FbcB363671E83",
+  "adminRole": "0x0000000000000000000000000000000000000000000000000000000000000000",
+  "deployerIsAdmin": true,
+  "transactionHash": "0xa0e691329467367a6e60a959ddc768db7adbae25602b1c9ce894e9642bfc2775",
+  "blockNumber": 1,
+  "gasUsed": "2502495",
+  "bytecodeBytes": 11249,
+  "abiEntries": 23,
+  "buildProfile": "default",
+  "compiler": "0.8.34",
+  "evmVersion": "paris",
+  "optimizer": {
+    "enabled": false
+  }
+}

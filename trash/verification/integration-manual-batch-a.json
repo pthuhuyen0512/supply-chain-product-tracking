@@ -1,0 +1,10 @@
+{
+  "checkedAt": "2026-11-15T19:29:05.424Z",
+  "block": 10,
+  "oldProductId": "COFFEE-DEMO-001",
+  "oldProductAndHistoryUnchanged": true,
+  "rejectedProductId": "STEP08-REJECT-001",
+  "rejectedProductExists": false,
+  "rejectedProductHistoryLength": 0,
+  "manualEvidence": "Three original user screenshots show real MetaMask rejection, duplicate preflight rejection and successful new creation. Disconnect and wrong-chain cases are not shown and remain pending."
+}

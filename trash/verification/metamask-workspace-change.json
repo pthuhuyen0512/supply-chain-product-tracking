@@ -1,0 +1,34 @@
+{
+  "checkedAt": "2026-11-15T17:29:49.541Z",
+  "client": "Ganache/v7.7.3/EthereumJS TestRPC/v7.7.3/ethereum-js",
+  "rpcUrl": "http://127.0.0.1:7545",
+  "chainIdHex": "0x539",
+  "chainId": "1337",
+  "networkId": "5777",
+  "block": 0,
+  "previousContract": "0x8B52d5D247fa21Af5D471FcD73991fF6Aaf56fda",
+  "previousContractCode": "0x",
+  "previousReceiptExists": false,
+  "accounts": [
+    {
+      "address": "0x2FE82257462dc3095D497e6ce446b2ce1Bba25ec",
+      "balanceETH": "100.0"
+    },
+    {
+      "address": "0x810A640B6089B12ab3bb7Bde1697752129679828",
+      "balanceETH": "100.0"
+    },
+    {
+      "address": "0x3a9f1bC5DE0dA2d1e04BEbBA2c6B29f09ED0AaB7",
+      "balanceETH": "100.0"
+    },
+    {
+      "address": "0x3788b00da52305a37DA455B164B0EBf2a937B4Bd",
+      "balanceETH": "100.0"
+    },
+    {
+      "address": "0x9CE98Beb9e0Bacb75cD09B2a6A623cD366805Cd3",
+      "balanceETH": "100.0"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-11-15T17:52:15.043Z",
+  "results": [
+    "English document metadata, visible UI, placeholders and accessibility labels verified; desktop 1440 and mobile 390/320 have no page overflow.",
+    "RPC failure message is in English.",
+    "Invalid-config message and export guidance are in English."
+  ],
+  "pageErrors": []
+}
