@@ -30,12 +30,6 @@
 # Snapshot cheatcodes output
 /snapshots
 
-# Local AI tools
-/.agents/
-/.claude/
-/AGENTS.md
-/CLAUDE.md
-
 # Hardhat template examples
 /contracts/Counter.sol
 /contracts/Counter.t.sol
@@ -56,3 +50,11 @@
 
 # Machine-specific public demo account mapping
 /docs/local-demo.local.md
+
+# Temporary Office files and local working notes
+~$*
+/note.md
+/GROUP_REPORT_DRAFT.md
+
+# Internal archives are not part of the submission
+/trash/

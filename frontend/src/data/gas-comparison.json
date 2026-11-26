@@ -1,11 +1,11 @@
 {
   "snapshotDate": "2026-11-16",
   "source": {
-    "system": "Local Ganache JSON-RPC exports and supplied Word report",
+    "system": "Local Ganache JSON-RPC exports and supporting gas comparison report",
     "files": [
-      "comparision_gas_v1_v2.docx, Part 3",
-      "transaction_v1/ganache log v1/transactions.jsonl",
-      "transaction_v2/transactions.jsonl"
+      "docs/evidence/ganache_comparison.pdf, Part 3",
+      "docs/evidence/ganache/v1/transactions.jsonl",
+      "docs/evidence/ganache/v2/transactions.jsonl"
     ],
     "caveats": [
       "Fixed snapshots from 16 November 2026, not live blockchain data.",
@@ -16,7 +16,7 @@
     "evidenceFlow": [
       {
         "title": "Read Part 3",
-        "detail": "Read the three-part supplied DOCX and retained all comparisons, exact transaction identifiers, workload restrictions and calldata interpretation."
+        "detail": "The supporting gas comparison PDF describes matched operations, transaction identifiers, workload restrictions and calldata interpretation."
       },
       {
         "title": "Recompute from receipts",

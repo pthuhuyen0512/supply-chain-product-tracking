@@ -4,8 +4,7 @@
   "type": "module",
   "scripts": {
     "deploy:local": "hardhat ignition deploy ignition/modules/SupplyChain.ts --network ganache --build-profile default",
-    "export:frontend": "node scripts/export-frontend.mjs",
-    "verify:demo": "node scripts/verify-wallet-demo.mjs"
+    "export:frontend": "node scripts/export-frontend.mjs"
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-ethers": "^4.2.2",

@@ -43,8 +43,7 @@ query: "?raw", import: "default" })` to load optional raw JSON, then parses and
 validates it at runtime. Malformed JSON produces a clear message on the page.
 A static import would fail on a clean clone without the local file. If the glob is
 empty or configuration is invalid, the page displays export instructions and disables
-blockchain actions. Step 05 verified actual production builds and browser rendering
-with both missing and malformed configuration.
+blockchain actions. Frontend tests cover missing and malformed configuration.
 
 Addresses and Chain IDs apply only to the verified workspace. Recheck the environment
 and export again after changing machines or workspaces. Keep Ganache running during use.

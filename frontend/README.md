@@ -1,65 +1,20 @@
-# Trace — Supply Chain Frontend
+# Supply Chain Frontend
 
-Vanilla JavaScript + Vite. Run these commands from `frontend/`:
+The Vite application uses JavaScript, ethers v6, qrcode and html5-qrcode. See the [root README](../README.md) for dependency installation, Ganache setup, V2 deployment, ABI export and MetaMask configuration.
+
+Run from this directory:
 
 ```powershell
 npm.cmd ci
+npm.cmd test
+npm.cmd run build
 npm.cmd run dev
 ```
 
-Open the local URL printed by Vite. To test, build, and preview:
+Public lookup uses an RPC provider. State-changing operations use the current MetaMask signer. The interface supports role grants, product creation, sequential handovers, timestamped history, QR generation, webcam scanning and QR-image upload.
 
-```powershell
-npm.cmd test
-npm.cmd run build
-npm.cmd run preview
-```
+`src/abi/SupplyChain.json` contains the V2 ABI. Generate `src/config/deployment.local.json` using `npm.cmd run export:frontend` from the repository root. The local file stays ignored; without valid configuration the page displays setup instructions instead of enabling blockchain actions. See [configuration details](src/config/README.md).
 
-The ABI is stored in `src/abi/SupplyChain.json`. Generate the local configuration
-with `npm.cmd run export:frontend` from the **repository root**, after deploying
-and verifying Ganache. See `src/config/README.md`. A clone without local configuration
-still builds and opens with export instructions. No placeholder contract address is
-used. The optional JSON file is imported as raw text, then parsed and validated so
-malformed configuration also produces a useful message on the page.
+The Gas comparison view reads a fixed snapshot in `src/data/gas-comparison.json`. Its source records are retained under [docs/evidence/](../docs/evidence/README.md). It is not a live gas monitor.
 
-Step 06 implements MetaMask connection, account/network changes, on-chain role
-checks, role grants, product creation, and stage-by-stage handovers. Only MetaMask
-signs write operations. A separate JsonRpcProvider reads the local chain. Every
-operation checks current accounts, Chain IDs, bytecode, permissions, and contract
-simulation before asking for a signature. Buttons stay disabled while a transaction
-is in progress. The UI displays its hash, confirmed receipt, and gas used.
-
-The local demo checklist reads public Ganache accounts and prepares form inputs.
-See [the manual acceptance guide](../docs/wallet-acceptance.md). Automated tests and
-an injected test provider do not prove real MetaMask signing; manual acceptance is
-recorded separately in `docs/verification/wallet-transactions.md`.
-
-Step 07 implements public product lookup and ordered history without a wallet,
-product-ID-only QR generation and PNG download, camera scanning, and QR image scanning.
-Unknown IDs and read failures clear previous results. QR payloads are treated as literal
-case-sensitive product IDs, never as links to open or code to execute.
-
-Camera access is requested only after Open camera. Scanning stops after one valid
-decode, on Stop camera, when the QR section leaves the screen, when the tab is hidden,
-or when leaving the page. Physical webcam acceptance is recorded separately from
-automated image-decoding and scanner lifecycle tests in `docs/verification/lookup-qr.md`.
-See [the camera acceptance guide](../docs/lookup-qr-acceptance.md).
-
-The page does not store configuration or secrets in localStorage. All frontend UI
-text and future additions must be in English.
-
-The **Gas comparison** navigation item integrates the comparison from `1Compare/`
-using a standalone copy of its reviewed rows in `src/data/gas-comparison.json`.
-It works without Ganache or MetaMask. The data is a fixed 16 November 2026 snapshot,
-not live RPC data. Large percentage cards and per-function badges show signed
-`(V2 - V1) / V1 * 100` changes for gas and actual fees. Function filters, gas/fee
-charts, receipt details, a common-price scenario, and full snapshot scopes are
-available in the section. Receipt fees are summed as integer Wei; exact scope
-totals are recomputed from those receipts to avoid source rounding differences.
-
-For complete installation, Ganache deployment, dynamic account mapping and MetaMask
-setup, follow the [root README](../README.md). The latest integration outcome is
-[the step 08 matrix](../docs/verification/integration.md): the fresh MetaMask flow and
-physical QR acceptance passed. Actual wallet disconnect/reconnect and wrong-network
-recovery were waived by the user and not run; their simulated coverage is separate.
-The [Quoc report section](../docs/report-quoc.md) describes the implemented design.
+Use localhost for camera access and allow browser permission. The application releases the camera after decoding, stopping or leaving the scanning view. A successful uploaded-image test does not establish physical-webcam operation. Historical acceptance records are described in the [evidence index](../docs/evidence/README.md).
